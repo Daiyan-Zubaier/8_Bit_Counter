@@ -3,15 +3,15 @@ project:
   title:        "298A"      # Project title
   author:       "Daiyan Zubaier"      # Your name
   discord:      "daiyan2006"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Testing stuff"      # One line description of what your project does
+  description:  "8 Bit Counter"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     10         # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 340x160 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_8_bit_counter_daiyan_zubaier"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -23,8 +23,8 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
+  ui[0]: "load_en"
+  ui[1]: "control_en"
   ui[2]: ""
   ui[3]: ""
   ui[4]: ""
@@ -43,14 +43,14 @@ pinout:
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "data[0]"
+  uio[1]: "data[1]"
+  uio[2]: "data[2]"
+  uio[3]: "data[3]"
+  uio[4]: "data[4]"
+  uio[5]: "data[5]"
+  uio[6]: "data[6]"
+  uio[7]: "data[7]"
 
 # Do not change!
 yaml_version: 6
