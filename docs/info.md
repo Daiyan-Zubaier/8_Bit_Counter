@@ -9,12 +9,18 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+It is a 8 bit counter with async reset (rst_n), sync load (controlled via an enable ui_in[0]) and a tri state output with the control bit being (ui_in[1]).
 
 ## How to test
 
-Explain how to use your project
+```bash
+cd test
+make
+```
+
+Example output:
+![alt text](image-1.png)
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware was used
