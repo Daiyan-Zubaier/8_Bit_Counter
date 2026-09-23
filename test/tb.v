@@ -18,31 +18,17 @@ module tb ();
   reg rst_n;
   reg ena;
   reg [7:0] ui_in;
-  wire [7:0] uio_in;
+  reg [7:0] uio_in;
   wire [7:0] uo_out;
   wire [7:0] uio_out;
   wire [7:0] uio_oe;
-
-  // Model the physical bidirectional pins and an external data source.
-  tri [7:0] uio_pins;
-  reg [7:0] external_data;
-  reg [7:0] external_oe;
-  assign uio_in = uio_pins;
-
-  genvar i;
-  generate
-    for (i = 0; i < 8; i = i + 1) begin : pad_model
-      assign uio_pins[i] = uio_oe[i] ? uio_out[i] : 1'bz;
-      assign uio_pins[i] = external_oe[i] ? external_data[i] : 1'bz;
-    end
-  endgenerate
 `ifdef GL_TEST
   wire VPWR = 1'b1;
   wire VGND = 1'b0;
 `endif
 
-  // Counter under test (or its netlist when GL_TEST is defined).
-  tt_um_8_bit_counter_daiyan_zubaier user_project (
+  // Replace tt_um_example with your module name:
+  tt_um_example user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
