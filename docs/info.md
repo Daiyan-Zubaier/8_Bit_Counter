@@ -21,6 +21,18 @@ make
 Example output:
 ![alt text](image-1.png)
 
+Counter incrementing gtkwave
+![alt text](image.png)
+
+Hi-Z:
+![alt text](image-3.png)
+See yellow line in uio_pins after falling edge of control_en pin.
+
+You might notice this:
+![alt text](image-4.png)
+and think, hmmm... this looks wrong. Well it's reading from the testbench driver, both the chip driver and test bench driver share the same output pins. If you keep scrolling over to the high impeadence test you'll see correct behaviour (see ss above).
+
+
 ## External hardware
 
 No external hardware was used

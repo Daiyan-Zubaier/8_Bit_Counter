@@ -6,14 +6,13 @@
 */
 module tb ();
 
-  // Dump the signals to a FST file. You can view it with gtkwave or surfer.
+  // Dump the signals to a FST file
   initial begin
     $dumpfile("tb.fst");
     $dumpvars(0, tb);
     #1;
   end
 
-  // Wire up the inputs and outputs:
   reg clk;
   reg rst_n;
   reg ena;
@@ -23,7 +22,6 @@ module tb ();
   wire [7:0] uio_out;
   wire [7:0] uio_oe;
 
-  // Model the physical bidirectional pins and an external data source.
   tri [7:0] uio_pins;
   reg [7:0] external_data;
   reg [7:0] external_oe;
@@ -32,7 +30,7 @@ module tb ();
   genvar i;
   generate
     for (i = 0; i < 8; i = i + 1) begin : pad_model
-      assign uio_pins[i] = uio_oe[i] ? uio_out[i] : 1'bz;
+      assign uio_pins[i] = uio_oe[i] ? uio_out[i] : 1'bz; /*z = high imp output */
       assign uio_pins[i] = external_oe[i] ? external_data[i] : 1'bz;
     end
   endgenerate
